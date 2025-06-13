@@ -207,7 +207,7 @@ export const products: Product[] = [
     brand: "ChillWear",
     size: ["M", "L", "XL"],
     color: ["Grey", "Black"],
-    style: "Lounge",
+    style: "lounge",
   },
   {
     id: "shorts2",

@@ -17,25 +17,20 @@ export default function HomePage() {
   const dressStyles = [
     {
       name: "Casual",
-      href: "/shop?style=casual",
+      href: "/category/casual",
       imgSrc: "/shirts.png", 
       alt: "A man wearing a casual light blue t-shirt.",
     },
     {
       name: "Formal",
-      href: "/shop?style=formal",
-      imgSrc: "/formal-shirts.png", // Replace with your image path
+      href: "/category/formal",
+      imgSrc: "/formal-shirts.png", 
       alt: "A man wearing a formal checkered blazer.",
     },
-    {
-      name: "Shorts",
-      href: "/shop?style=party",
-      imgSrc: "/shorts.png", // Replace with your image path
-      alt: "A woman wearing a stylish party sweater.",
-    },
+   
     {
       name: "Sports",
-      href: "/shop?style=gym",
+      href: "/category/sport",
       imgSrc: "/sports.png", // Replace with your image path
       alt: "A person in a tank top lifting a dumbbell.",
     },
@@ -251,26 +246,31 @@ export default function HomePage() {
     Browse by Dress Style
   </h2>
 
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
-    {dressStyles.map((style) => (
-      <Link href={style.href} key={style.name} className="block group">
-        <div className="relative aspect-square bg-white rounded-2xl shadow-sm overflow-hidden transition-all duration-300 group-hover:shadow-lg">
-          {/* Text label on top */}
-          <h3 className="absolute top-4 left-4 z-10 font-semibold text-lg text-white bg-black bg-opacity-50 px-2 py-1 rounded">
-            {style.name}
-          </h3>
 
-          {/* Square Image inside responsive card */}
-          <Image
-            src={style.imgSrc}
-            alt={style.alt}
-            fill
-            className="object-cover"
-          />
-        </div>
-      </Link>
-    ))}
-  </div>
+  <div className="grid grid-cols-1 sm:grid-cols-2 grid-rows-[auto_auto] gap-5 max-w-4xl mx-auto">
+  {dressStyles.map((style, index) => (
+    <Link
+      href={style.href}
+      key={style.name}
+      className={`block group ${
+        index === 2 ? "sm:col-span-2" : ""
+      }`}
+    >
+      <div className="relative aspect-[2/1] sm:aspect-[4/2] bg-white rounded-2xl shadow-sm overflow-hidden transition-all duration-300 group-hover:shadow-lg">
+        <h3 className="absolute top-4 left-4 z-10 font-semibold text-lg text-white bg-black bg-opacity-50 px-2 py-1 rounded">
+          {style.name}
+        </h3>
+        <Image
+          src={style.imgSrc}
+          alt={style.alt}
+          fill
+          className="object-cover"
+        />
+      </div>
+    </Link>
+  ))}
+</div>
+
 </section>
 
 

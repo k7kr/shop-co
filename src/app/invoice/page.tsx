@@ -53,7 +53,7 @@ export default function InvoicePage() {
 
           <BlackOvalButton
             variant="contained"
-            onClick={() => router.push("/")}
+            onClick={() => router.push("/home")}
           >
             Back to Home
           </BlackOvalButton>

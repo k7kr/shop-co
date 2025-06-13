@@ -33,7 +33,7 @@ export default function Navbar() {
   const router = useRouter();
 
   const cartItems = useSelector((state: RootState) => state.cart.items);
-  const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+const cartCount = cartItems.length;
   const auth = getAuth(app);
 
   useEffect(() => {
@@ -116,9 +116,9 @@ export default function Navbar() {
       {showBanner && (
         <div className="bg-black text-white text-sm text-center px-4 py-2 relative">
           <span>
-            Get <strong>20% off</strong> on your first order.{" "}
-            <Link href="/shop" className="underline">
-              Shop Now
+            GET <strong>20% OFF</strong> ON YOUR FIRST ORDER.{" "}
+            <Link href="/shop" className="underline font-extrabold">
+              SHOP NOW
             </Link>
           </span>
           <button
@@ -145,14 +145,14 @@ export default function Navbar() {
           <Link href="/shop" className="hover:underline text-black">
             Shop
           </Link>
-          <Link href="/category/shirts" className="hover:underline text-black">
-            Shirts
+          <Link href="/category/casual" className="hover:underline text-black">
+            Casual
           </Link>
-          <Link href="/new" className="hover:underline text-black">
-            Shorts
+           <Link href="/category/formal" className="hover:underline text-black">
+            Formal
           </Link>
-          <Link href="/brands" className="hover:underline text-black">
-            Jeans
+          <Link href="/category/sport" className="hover:underline text-black">
+            Sports
           </Link>
         </nav>
 
@@ -191,13 +191,13 @@ export default function Navbar() {
           </div>
 
           <Link href="/cart" className="relative text-black">
-            <ShoppingCart size={26} />
-            {isClient && totalQuantity > 0 && (
-              <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full px-1.5 py-0.5">
-                {totalQuantity}
-              </span>
-            )}
-          </Link>
+  <ShoppingCart size={26} />
+  {isClient && cartCount > 0 && (
+    <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full px-1.5 py-0.5">
+      {cartCount}
+    </span>
+  )}
+</Link>
 
           {user ? (
             <>
@@ -235,14 +235,14 @@ export default function Navbar() {
           <Link href="/shop" onClick={() => setMenuOpen(false)} className="block text-black">
             Shop
           </Link>
-          <Link href="/sale" onClick={() => setMenuOpen(false)} className="block text-black">
-            On Sale
+          <Link href="/category/casual" onClick={() => setMenuOpen(false)} className="block text-black">
+             Casual
           </Link>
-          <Link href="/new" onClick={() => setMenuOpen(false)} className="block text-black">
-            New Arrivals
+          <Link href="/category/formal" onClick={() => setMenuOpen(false)} className="block text-black">
+            Formal
           </Link>
-          <Link href="/brands" onClick={() => setMenuOpen(false)} className="block text-black">
-            Brands
+          <Link href="/category/sport" onClick={() => setMenuOpen(false)} className="block text-black">
+            Sports
           </Link>
           <div className="relative">
             <input

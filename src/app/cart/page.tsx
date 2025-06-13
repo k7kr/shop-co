@@ -62,13 +62,13 @@ export default function CartPage() {
                   className="flex items-start gap-4 border rounded-xl p-4 shadow-sm"
                 >
                   <div className="h-24 w-24 relative">
-  <Image
-    src={item.image}
-    alt={item.name}
-    fill
-    className="rounded-md object-cover object-center"
-  />
-</div>
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      className="rounded-md object-cover object-center"
+                    />
+                  </div>
                   <div className="flex-1 space-y-1">
                     <h2 className="font-semibold text-lg">{item.name}</h2>
                     <p className="text-sm text-gray-500">
@@ -121,7 +121,7 @@ export default function CartPage() {
                 onClick={handleCheckout}
                 className="w-full bg-black text-white py-3 rounded-full font-semibold hover:opacity-90 transition"
               >
-                Go to Checkout →
+                Proceed To Checkout →
               </button>
 
               <button

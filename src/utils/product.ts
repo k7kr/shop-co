@@ -12,5 +12,5 @@ export interface Product {
   brand: string;
   size?: string | string[];   
   color?: string[];
-  style?: string;
+  style: string;
 }

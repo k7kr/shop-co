@@ -41,6 +41,7 @@ import { AuthProvider } from "@/context/AuthContext";
 export const metadata = {
   title: 'Shop.co',
   description: 'Style your day',
+
 };
 
 

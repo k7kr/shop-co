@@ -28,6 +28,7 @@ export default function ProductsPage() {
     styles: [] as string[],
   });
   const [sortBy, setSortBy] = useState("Most Popular");
+  
 
   const handleCheckbox = (type: keyof typeof filters, value: string) => {
     setFilters((prev) => {
