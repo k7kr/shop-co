@@ -196,7 +196,7 @@ export default function HomePage() {
         <span>Levi’s</span>
         <span>Tommy Hilfiger</span>
         <span>FILA</span>
-        <span>HRX</span>
+        <span>HR</span>
       </div>
     ))}
   </div>
