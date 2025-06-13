@@ -7,10 +7,7 @@ import { products } from "@/data/products";
 import Link from "next/link";
 import Image from "next/image";
 
-
-
 export default function HomePage() {
-  const [currentReview, setCurrentReview] = useState(0);
   const [brands, setBrands] = useState(0);
   const [productsCount, setProductsCount] = useState(0);
   const [customers, setCustomers] = useState(0);
@@ -18,71 +15,23 @@ export default function HomePage() {
     {
       name: "Casual",
       href: "/category/casual",
-      imgSrc: "/shirts.png", 
+      imgSrc: "/shirts.png",
       alt: "A man wearing a casual light blue t-shirt.",
     },
     {
       name: "Formal",
       href: "/category/formal",
-      imgSrc: "/formal-shirts.png", 
+      imgSrc: "/formal-shirts.png",
       alt: "A man wearing a formal checkered blazer.",
     },
-   
+
     {
       name: "Sports",
       href: "/category/sport",
-      imgSrc: "/sports.png", // Replace with your image path
+      imgSrc: "/sports.png", 
       alt: "A person in a tank top lifting a dumbbell.",
     },
   ];
-
-  const customerReviews = [
-    {
-      id: 1,
-      name: "Sarah M.",
-      rating: "★★★★★",
-      comment: "I'm blown away by the quality...",
-    },
-    {
-      id: 2,
-      name: "Alex K.",
-      rating: "★★★★★",
-      comment: "Finding clothes that align...",
-    },
-    {
-      id: 3,
-      name: "James L.",
-      rating: "★★★★★",
-      comment: "As someone who's always...",
-    },
-    {
-      id: 4,
-      name: "Mooner",
-      rating: "★★★★★",
-      comment: "You are unique around clothes...",
-    },
-    {
-      id: 5,
-      name: "Emma S.",
-      rating: "★★★★★",
-      comment: "The customer service at...",
-    },
-    {
-      id: 6,
-      name: "David P.",
-      rating: "★★★★★",
-      comment: "I've been shopping with Shopaco...",
-    },
-  ];
-
-  const nextReview = () =>
-    setCurrentReview((prev) =>
-      prev === customerReviews.length - 1 ? 0 : prev + 1
-    );
-  const prevReview = () =>
-    setCurrentReview((prev) =>
-      prev === 0 ? customerReviews.length - 1 : prev - 1
-    );
 
   useEffect(() => {
     const animateCount = (
@@ -176,26 +125,28 @@ export default function HomePage() {
             </div>
           </div>
 
-  <div className="w-screen bg-black py-6 relative left-1/2 right-1/2 -mx-[50vw] px-0 overflow-hidden">
-  <div className="whitespace-nowrap flex animate-scroll-marquee gap-16 text-white text-xl font-light">
-    {Array(2).fill(0).map((_, i) => (
-      <div key={i} className="flex gap-16 px-4">
-         <span>Tommy Hilfiger</span>
-        <span>VERSACE</span>
-        <span>ZARA</span>
-        <span>GUCCI</span>
-        <span>Calvin Klein</span>
-        <span className="font-bold">PRADA</span>
-        <span>Calvin Klein</span>
-        <span>H&M</span>
-        <span>Levi’s</span>
-        <span>Tommy Hilfiger</span>
-        <span>FILA</span>
-        <span>HR</span>
-      </div>
-    ))}
-  </div>
-</div>
+          <div className="w-screen bg-black py-6 relative left-1/2 right-1/2 -mx-[50vw] px-0 overflow-hidden">
+            <div className="whitespace-nowrap flex animate-scroll-marquee gap-16 text-white text-xl font-light">
+              {Array(2)
+                .fill(0)
+                .map((_, i) => (
+                  <div key={i} className="flex gap-16 px-4">
+                    <span>Tommy Hilfiger</span>
+                    <span>VERSACE</span>
+                    <span>ZARA</span>
+                    <span>GUCCI</span>
+                    <span>Calvin Klein</span>
+                    <span className="font-bold">PRADA</span>
+                    <span>Calvin Klein</span>
+                    <span>H&M</span>
+                    <span>Levi’s</span>
+                    <span>Tommy Hilfiger</span>
+                    <span>FILA</span>
+                    <span>HR</span>
+                  </div>
+                ))}
+            </div>
+          </div>
         </section>
 
         {/* Top Selling */}
@@ -241,105 +192,31 @@ export default function HomePage() {
           </div>
         </section>
 
- <section className="bg-gray-100 px-4 py-6 sm:px-6 sm:py-8 md:px-10 md:py-10 rounded-2xl">
-  <h2 className="text-xl md:text-2xl font-extrabold mb-6 text-center text-gray-800 tracking-widest uppercase">
-    Browse by Dress Style
-  </h2>
+        <section className="bg-gray-100 px-4 py-6 sm:px-6 sm:py-8 md:px-10 md:py-10 rounded-2xl">
+          <h2 className="text-xl md:text-2xl font-extrabold mb-6 text-center text-gray-800 tracking-widest uppercase">
+            Browse by Dress Style
+          </h2>
 
-
-  <div className="grid grid-cols-1 sm:grid-cols-2 grid-rows-[auto_auto] gap-5 max-w-4xl mx-auto">
-  {dressStyles.map((style, index) => (
-    <Link
-      href={style.href}
-      key={style.name}
-      className={`block group ${
-        index === 2 ? "sm:col-span-2" : ""
-      }`}
-    >
-      <div className="relative aspect-[2/1] sm:aspect-[4/2] bg-white rounded-2xl shadow-sm overflow-hidden transition-all duration-300 group-hover:shadow-lg">
-        <h3 className="absolute top-4 left-4 z-10 font-semibold text-lg text-white bg-black bg-opacity-50 px-2 py-1 rounded">
-          {style.name}
-        </h3>
-        <Image
-          src={style.imgSrc}
-          alt={style.alt}
-          fill
-          className="object-cover"
-        />
-      </div>
-    </Link>
-  ))}
-</div>
-
-</section>
-
-
-        {/* Our Happy Customers */}
-        <section className="text-center py-12 bg-gray-50 rounded-xl">
-          <h2 className="text-3xl font-bold mb-10">OUR HAPPY CUSTOMERS</h2>
-          <div className="relative max-w-4xl mx-auto">
-            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 mx-6">
-              <div className="text-yellow-400 text-2xl mb-4">
-                {customerReviews[currentReview].rating}
-              </div>
-              <h4 className="font-bold text-xl mb-2">
-                {customerReviews[currentReview].name}
-              </h4>
-              <p className="text-gray-600">
-                {customerReviews[currentReview].comment}
-              </p>
-            </div>
-            <div className="flex justify-center mt-6 space-x-4">
-              <button
-                onClick={prevReview}
-                className="bg-gray-200 text-black p-2 rounded-full hover:bg-gray-300 transition"
+          <div className="grid grid-cols-1 sm:grid-cols-2 grid-rows-[auto_auto] gap-5 max-w-4xl mx-auto">
+            {dressStyles.map((style, index) => (
+              <Link
+                href={style.href}
+                key={style.name}
+                className={`block group ${index === 2 ? "sm:col-span-2" : ""}`}
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
+                <div className="relative aspect-[2/1] sm:aspect-[4/2] bg-white rounded-2xl shadow-sm overflow-hidden transition-all duration-300 group-hover:shadow-lg">
+                  <h3 className="absolute top-4 left-4 z-10 font-semibold text-lg text-white bg-black bg-opacity-50 px-2 py-1 rounded">
+                    {style.name}
+                  </h3>
+                  <Image
+                    src={style.imgSrc}
+                    alt={style.alt}
+                    fill
+                    className="object-cover"
                   />
-                </svg>
-              </button>
-              <div className="flex space-x-2">
-                {customerReviews.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentReview(index)}
-                    className={`h-2 w-2 rounded-full ${
-                      currentReview === index ? "bg-black" : "bg-gray-300"
-                    }`}
-                  />
-                ))}
-              </div>
-              <button
-                onClick={nextReview}
-                className="bg-gray-200 text-black p-2 rounded-full hover:bg-gray-300 transition"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
-            </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
       </main>
