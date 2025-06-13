@@ -22,7 +22,7 @@ export default function LoginPage() {
       await signInWithEmailAndPassword(auth, email, password);
       setSuccess(true);
       setTimeout(() => {
-        router.push("/");
+        router.push("/home");
       }, 1200);
     } catch (err: unknown) {
       if (err instanceof Error) {
@@ -41,7 +41,6 @@ export default function LoginPage() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="bg-white/70 backdrop-blur-xl shadow-2xl rounded-3xl p-8 max-w-sm w-full text-black"
       >
-        {/* SHOP.CO Branding */}
         <h1 className="text-3xl font-extrabold tracking-wide text-center mb-2">SHOP.CO</h1>
 
         <h2 className="text-xl font-extrabold mb-6 text-center text-gray-800">Welcome Back</h2>
@@ -75,7 +74,6 @@ export default function LoginPage() {
         </form>
       </motion.div>
 
-      {/* Success Snackbar */}
       <Snackbar open={success} autoHideDuration={3000} anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}>
         <Alert severity="success" variant="filled">
           Logged in successfully!

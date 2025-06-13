@@ -30,7 +30,6 @@ export default function SearchBar() {
       onSubmit={handleSearch}
       className="flex items-center w-full md:w-[500px] bg-gray-100 rounded-full overflow-hidden border border-gray-300"
     >
-      {/* Category Dropdown */}
       <select
         value={selectedCategory}
         onChange={(e) => setSelectedCategory(e.target.value)}
@@ -54,7 +53,6 @@ export default function SearchBar() {
         className="flex-grow px-4 py-2 bg-gray-100 focus:outline-none text-sm"
       />
 
-      {/* Submit Button */}
       <button
         type="submit"
         className="bg-black text-white px-4 py-2 text-sm font-medium hover:bg-gray-900 transition"
