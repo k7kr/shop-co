@@ -46,7 +46,6 @@ export default function SearchBar() {
         })}
       </select>
 
-      {/* Search Input */}
       <input
         type="text"
         value={searchQuery}
