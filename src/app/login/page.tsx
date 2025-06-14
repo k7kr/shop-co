@@ -6,9 +6,8 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { Snackbar, Alert } from "@mui/material";
 import { app } from "@/firebase/firebaseConfig";
 import { motion } from "framer-motion";
-import Confetti from 'react-confetti';
-import { useWindowSize } from 'react-use';
-
+import Confetti from "react-confetti";
+import { useWindowSize } from "react-use";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("k7user@shopco.com");
@@ -20,7 +19,6 @@ export default function LoginPage() {
   const auth = getAuth(app);
   const { width, height } = useWindowSize();
 
-
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
@@ -31,7 +29,7 @@ export default function LoginPage() {
 
       setTimeout(() => {
         router.push("/home");
-      }, 5000); 
+      }, 5000);
     } catch (err: unknown) {
       if (err instanceof Error) {
         setError(err.message);
@@ -41,30 +39,34 @@ export default function LoginPage() {
     }
   };
 
- if (showLoader) {
-  return (
-    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black text-white">
-      <Confetti width={width} height={height} numberOfPieces={250} recycle={false} />
-      <motion.h1
-        className="text-5xl font-extrabold tracking-wider"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 0.8,
-          ease: "easeInOut",
-          repeat: Infinity,
-          repeatType: "mirror",
-        }}
-      >
-        SHOPCO
-      </motion.h1>
-      <p className="mt-4 text-lg tracking-wide text-gray-300 italic">
-        Wear the Future. Style the Moment.
-      </p>
-    </div>
-  );
-}
-
+  if (showLoader) {
+    return (
+      <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black text-white">
+        <Confetti
+          width={width}
+          height={height}
+          numberOfPieces={250}
+          recycle={false}
+        />
+        <motion.h1
+          className="text-5xl font-extrabold tracking-wider"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatType: "mirror",
+          }}
+        >
+          SHOPCO
+        </motion.h1>
+        <p className="mt-4 text-lg tracking-wide text-gray-300 italic">
+          Wear the Future. Style the Moment.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-300 flex items-center justify-center">
@@ -74,7 +76,9 @@ export default function LoginPage() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="bg-white/70 backdrop-blur-xl shadow-2xl rounded-3xl p-8 max-w-sm w-full text-black"
       >
-        <h1 className="text-3xl font-extrabold tracking-wide text-center mb-2">SHOPCO</h1>
+        <h1 className="text-3xl font-extrabold tracking-wide text-center mb-2">
+          SHOPCO
+        </h1>
         <h2 className="text-xl font-extrabold mb-6 text-center text-gray-800">
           Welcome Back
         </h2>

@@ -7,7 +7,11 @@ export default function SearchPage() {
   return (
     <>
       <Navbar />
-      <Suspense fallback={<div className="p-6 text-gray-600">Loading search results...</div>}>
+      <Suspense
+        fallback={
+          <div className="p-6 text-gray-600">Loading search results...</div>
+        }
+      >
         <SearchResultsClient />
       </Suspense>
       <Footer />

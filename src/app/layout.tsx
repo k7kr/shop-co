@@ -32,31 +32,29 @@
 //     </html>
 //   );
 // }
-import ReduxProvider from '@/redux/provider';
-import './globals.css';
-import { Toaster } from 'react-hot-toast';
+import ReduxProvider from "@/redux/provider";
+import "./globals.css";
+import { Toaster } from "react-hot-toast";
 import { AuthProvider } from "@/context/AuthContext";
 
-
 export const metadata = {
-  title: 'Shop.co',
-  description: 'Style your day',
-
+  title: "Shop.co",
+  description: "Style your day",
 };
 
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body>
         <ReduxProvider>
-            <AuthProvider>{children}</AuthProvider>
-           <Toaster position="top-right" />
+          <AuthProvider>{children}</AuthProvider>
+          <Toaster position="top-right" />
         </ReduxProvider>
       </body>
     </html>
   );
 }
-
-
-

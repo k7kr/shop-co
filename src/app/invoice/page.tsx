@@ -26,22 +26,36 @@ export default function InvoicePage() {
     <>
       <Navbar />
       <div className="min-h-screen bg-gray-100 p-6 flex flex-col items-center justify-center">
-        <div className="bg-white shadow-xl rounded-lg p-8 max-w-2xl w-full" ref={invoiceRef}>
+        <div
+          className="bg-white shadow-xl rounded-lg p-8 max-w-2xl w-full"
+          ref={invoiceRef}
+        >
           <h1 className="text-2xl font-bold text-center text-green-600 mb-4">
             Payment Successful
           </h1>
           <p className="text-center text-gray-600 mb-6">
-            Thank you for your purchase! Your order has been processed successfully.
+            Thank you for your purchase! Your order has been processed
+            successfully.
           </p>
 
           <div className="border p-4 rounded mb-6">
             <h2 className="text-lg font-semibold mb-2">Invoice Summary</h2>
             <ul className="text-sm text-gray-700 space-y-1">
-              <li><strong>Name:</strong> John Doe</li>
-              <li><strong>Email:</strong> johndoe@email.com</li>
-              <li><strong>Phone:</strong> 9876543210</li>
-              <li><strong>Address:</strong> 123 Main Street, Chennai, India</li>
-              <li><strong>Total:</strong> ₹4,299</li>
+              <li>
+                <strong>Name:</strong> John Doe
+              </li>
+              <li>
+                <strong>Email:</strong> johndoe@email.com
+              </li>
+              <li>
+                <strong>Phone:</strong> 9876543210
+              </li>
+              <li>
+                <strong>Address:</strong> 123 Main Street, Chennai, India
+              </li>
+              <li>
+                <strong>Total:</strong> ₹4,299
+              </li>
             </ul>
           </div>
         </div>

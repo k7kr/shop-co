@@ -65,7 +65,7 @@ export default function CheckoutPage() {
         <h1 className="text-2xl font-extrabold mb-6 text-center">CHECKOUT</h1>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Form */}
+     
           <div className="space-y-4">
             <h2 className="text-lg font-semibold mb-2">Shipping Information</h2>
             {Object.entries(form).map(([key, value]) => (
@@ -91,7 +91,7 @@ export default function CheckoutPage() {
             ))}
           </div>
 
-          {/* Order Summary */}
+         
           <div className="w-full border rounded-lg p-6 shadow-md bg-white">
             <h2 className="text-lg font-semibold mb-4">Order Summary</h2>
             <div className="space-y-3 max-h-60 overflow-y-auto pr-2">
@@ -111,14 +111,13 @@ export default function CheckoutPage() {
             </div>
 
             <button
-  onClick={handlePayment}
-  disabled={loading}
-  className="cursor-pointer w-full mt-6 bg-black hover:bg-gray-800 text-white py-3 px-6 rounded-full flex justify-center items-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
->
-  {loading && <Loader2 className="animate-spin w-4 h-4" />}
-  Proceed to Pay
-</button>
-
+              onClick={handlePayment}
+              disabled={loading}
+              className="cursor-pointer w-full mt-6 bg-black hover:bg-gray-800 text-white py-3 px-6 rounded-full flex justify-center items-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {loading && <Loader2 className="animate-spin w-4 h-4" />}
+              Proceed to Pay
+            </button>
           </div>
         </div>
       </div>

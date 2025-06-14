@@ -14,7 +14,11 @@ export default function ProductCard({ product }: { product: Product }) {
     return (
       <div className="flex items-center gap-0.5">
         {[...Array(fullStars)].map((_, i) => (
-          <Star key={`full-${i}`} size={14} className="text-yellow-400 fill-yellow-400" />
+          <Star
+            key={`full-${i}`}
+            size={14}
+            className="text-yellow-400 fill-yellow-400"
+          />
         ))}
         {halfStar && (
           <Star
@@ -30,13 +34,9 @@ export default function ProductCard({ product }: { product: Product }) {
     );
   };
 
-const hasDiscount =
-  typeof product.originalPrice === "number" && product.originalPrice > product.price;
-
   return (
     <Link href={`/products/${product.id}`}>
-      <div className="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer w-full relative">
-        {/* Product Image */}
+      <div className="bg-white rounded-xl p-3 sm:p-4 shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer w-full max-w-sm mx-auto relative">
         <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden mb-3 group">
           <Image
             src={product.image}
@@ -44,19 +44,11 @@ const hasDiscount =
             fill
             className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
           />
-          {/* Wishlist Icon */}
           <button className="absolute top-2 right-2 bg-white/90 backdrop-blur-sm p-1 rounded-full hover:bg-white transition-opacity opacity-0 group-hover:opacity-100">
             <Heart size={18} className="text-gray-600 hover:text-red-500" />
           </button>
-          {/* Discount Badge */}
-        {hasDiscount && product.originalPrice !== undefined && (
-  <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full font-medium">
-    -{Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}%
-  </span>
-          )}
         </div>
 
-        {/* Product Info */}
         <h3 className="text-base font-medium text-gray-900">{product.name}</h3>
         <p className="text-sm text-gray-500">{product.brand}</p>
 
@@ -64,18 +56,31 @@ const hasDiscount =
           <div className="flex items-center gap-1 mt-1">
             {renderStars(product.rating)}
             {product.reviewCount !== undefined && (
-              <span className="text-xs text-gray-500">({product.reviewCount})</span>
+              <span className="text-xs text-gray-500">
+                ({product.reviewCount})
+              </span>
             )}
           </div>
         )}
 
-        {/* Pricing */}
         <div className="mt-1 flex items-center gap-2">
-          <p className="text-lg font-semibold text-gray-900">₹{product.price}</p>
-          {hasDiscount && (
-            <p className="text-sm text-gray-400 line-through">₹{product.originalPrice}</p>
-          )}
+          <p className="text-lg font-semibold text-gray-900">
+            ₹{product.price}
+          </p>
         </div>
+
+        {product.color && product.color.length > 0 && (
+          <div className="mt-2 flex items-center gap-1 flex-wrap">
+            {product.color.map((color, index) => (
+              <span
+                key={index}
+                className="w-4 h-4 rounded-full border border-gray-300"
+                style={{ backgroundColor: color }}
+                title={color}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </Link>
   );

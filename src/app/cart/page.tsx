@@ -105,7 +105,6 @@ export default function CartPage() {
               ))}
             </div>
 
-            {/* Order Summary */}
             <div className="w-full lg:w-[350px] bg-white p-6 rounded-xl shadow-md space-y-4">
               <h2 className="text-xl font-semibold">Order Summary</h2>
               <div className="flex justify-between text-sm text-gray-600">

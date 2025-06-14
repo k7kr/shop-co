@@ -28,7 +28,7 @@ export default function HomePage() {
     {
       name: "Sports",
       href: "/category/sport",
-      imgSrc: "/sports.png", 
+      imgSrc: "/sports.png",
       alt: "A person in a tank top lifting a dumbbell.",
     },
   ];
@@ -149,7 +149,6 @@ export default function HomePage() {
           </div>
         </section>
 
-       
         <section>
           <h2 className="text-3xl font-extrabold mb-6 text-center">
             TOP SELLING
@@ -172,7 +171,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        
         <section className="mt-16">
           <h2 className="text-3xl font-extrabold mb-6 text-center">
             FEATURED PRODUCTS

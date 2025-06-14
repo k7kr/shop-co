@@ -42,7 +42,11 @@ export default function ProductDetailPage() {
     return (
       <div className="flex gap-1">
         {[...Array(fullStars)].map((_, i) => (
-          <Star key={`full-${i}`} size={18} className="text-yellow-400 fill-yellow-400" />
+          <Star
+            key={`full-${i}`}
+            size={18}
+            className="text-yellow-400 fill-yellow-400"
+          />
         ))}
         {halfStar && (
           <Star
@@ -61,7 +65,11 @@ export default function ProductDetailPage() {
   const handleReviewSubmit = () => {
     if (!newReview.trim()) return;
     setReviews([
-      { name: "You", content: newReview.trim(), date: new Date().toLocaleDateString() },
+      {
+        name: "You",
+        content: newReview.trim(),
+        date: new Date().toLocaleDateString(),
+      },
       ...reviews,
     ]);
     setNewReview("");
@@ -106,29 +114,35 @@ export default function ProductDetailPage() {
             <p className="text-gray-500 text-sm mb-4">{product.brand}</p>
             <div className="flex items-center gap-2 mb-2">
               {renderStars(product.rating || 0)}
-              <span className="text-sm text-gray-600">({product.reviewCount})</span>
+              <span className="text-sm text-gray-600">
+                ({product.reviewCount})
+              </span>
             </div>
-            <p className="text-2xl font-bold text-green-700 mb-4">₹{product.price}</p>
+            <p className="text-2xl font-bold text-green-700 mb-4">
+              ₹{product.price}
+            </p>
             <p className="text-sm mb-4 text-gray-700">{product.description}</p>
 
             {Array.isArray(product.size) && product.size.length > 0 && (
-  <div className="mb-4">
-    <span className="block mb-1 font-medium">Choose Size:</span>
-    <div className="flex gap-2 flex-wrap">
-      {product.size.map((s: string) => (
-        <button
-          key={s}
-          onClick={() => setSelectedSize(s)}
-          className={`px-4 py-1 rounded border ${
-            selectedSize === s ? "bg-black text-white" : "hover:border-black"
-          }`}
-        >
-          {s}
-        </button>
-      ))}
-    </div>
-  </div>
-)}
+              <div className="mb-4">
+                <span className="block mb-1 font-medium">Choose Size:</span>
+                <div className="flex gap-2 flex-wrap">
+                  {product.size.map((s: string) => (
+                    <button
+                      key={s}
+                      onClick={() => setSelectedSize(s)}
+                      className={`px-4 py-1 rounded border ${
+                        selectedSize === s
+                          ? "bg-black text-white"
+                          : "hover:border-black"
+                      }`}
+                    >
+                      {s}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <div className="flex items-center gap-4 mb-4">
               <span>Quantity:</span>
@@ -160,19 +174,31 @@ export default function ProductDetailPage() {
           <div className="flex gap-8 mb-6 border-b pb-2 text-lg font-medium">
             <button
               onClick={() => setActiveTab("details")}
-              className={activeTab === "details" ? "border-b-2 border-black" : "text-gray-600"}
+              className={
+                activeTab === "details"
+                  ? "border-b-2 border-black"
+                  : "text-gray-600"
+              }
             >
               Product Details
             </button>
             <button
               onClick={() => setActiveTab("reviews")}
-              className={activeTab === "reviews" ? "border-b-2 border-black" : "text-gray-600"}
+              className={
+                activeTab === "reviews"
+                  ? "border-b-2 border-black"
+                  : "text-gray-600"
+              }
             >
               Ratings & Reviews
             </button>
             <button
               onClick={() => setActiveTab("faqs")}
-              className={activeTab === "faqs" ? "border-b-2 border-black" : "text-gray-600"}
+              className={
+                activeTab === "faqs"
+                  ? "border-b-2 border-black"
+                  : "text-gray-600"
+              }
             >
               FAQs
             </button>
@@ -187,7 +213,8 @@ export default function ProductDetailPage() {
                 <strong>Style:</strong> {product.style}
               </p>
               <p>
-                <strong>Colors:</strong> {product.color?.join(", ") || "Not specified"}
+                <strong>Colors:</strong>{" "}
+                {product.color?.join(", ") || "Not specified"}
               </p>
             </div>
           )}
@@ -230,7 +257,9 @@ export default function ProductDetailPage() {
 
           {activeTab === "faqs" && (
             <div>
-              <p className="text-gray-600">No FAQs available for this product.</p>
+              <p className="text-gray-600">
+                No FAQs available for this product.
+              </p>
             </div>
           )}
         </div>
