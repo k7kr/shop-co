@@ -203,7 +203,9 @@ const cartCount = cartItems.length;
             <>
               <div className="flex items-center gap-2">
                 <IconButton onClick={handleMenuClick}>
-                  <Avatar sx={{ width: 32, height: 32 }} />
+                  <Avatar 
+                    src="/human.png" 
+                  sx={{ width: 32, height: 32 }} />
                 </IconButton>
                 <Typography className="text-sm hidden md:block">
                   {user.email?.split("@")[0]}
@@ -219,11 +221,12 @@ const cartCount = cartItems.length;
               href="/login"
               className="flex items-center gap-2 text-black hover:underline"
             >
-              <Avatar
+              {/* <Avatar
+              
                 sx={{ width: 30, height: 30, bgcolor: "#ccc", fontSize: 14 }}
               >
-                L
-              </Avatar>
+                LOGIN
+              </Avatar> */}
               <span className="hidden md:block text-sm">Login</span>
             </Link>
           )}

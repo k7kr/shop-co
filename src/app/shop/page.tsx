@@ -64,7 +64,7 @@ export default function ProductsPage() {
     setFilteredProducts(results);
   }, [filters]);
 
-  const selectedCategory = filters.styles.length === 1 ? filters.styles[0] : "Products";
+  const selectedCategory = filters.styles.length === 1 ? filters.styles[0] : "PRODUCT";
 
   return (
     <>

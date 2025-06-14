@@ -149,7 +149,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Top Selling */}
+       
         <section>
           <h2 className="text-3xl font-extrabold mb-6 text-center">
             TOP SELLING
@@ -172,7 +172,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Featured Products */}
+        
         <section className="mt-16">
           <h2 className="text-3xl font-extrabold mb-6 text-center">
             FEATURED PRODUCTS

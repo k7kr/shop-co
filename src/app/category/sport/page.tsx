@@ -1,14 +1,18 @@
 import { products } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-export default function JeansPage() {
+export default function SportPage() {
   const filtered = products.filter(
     (product) => product.style?.toLowerCase() === "sport"
   );
 
   return (
+    <>
+        <Navbar/>
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4 capitalize">Jeans</h1>
+      <h1 className="text-2xl font-extrabold mb-4 capitalize">SPORTS WEAR</h1>
       {filtered.length === 0 ? (
         <p>No products found in this category.</p>
       ) : (
@@ -19,5 +23,7 @@ export default function JeansPage() {
         </div>
       )}
     </div>
+    <Footer/>
+        </>
   );
 }
