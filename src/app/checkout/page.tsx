@@ -113,7 +113,7 @@ export default function CheckoutPage() {
             <button
   onClick={handlePayment}
   disabled={loading}
-  className="w-full mt-6 bg-black hover:bg-gray-800 text-white py-3 px-6 rounded-full flex justify-center items-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+  className="cursor-pointer w-full mt-6 bg-black hover:bg-gray-800 text-white py-3 px-6 rounded-full flex justify-center items-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
 >
   {loading && <Loader2 className="animate-spin w-4 h-4" />}
   Proceed to Pay

@@ -79,7 +79,7 @@ export default function HomePage() {
                 your sense of style.
               </p>
               <Link href="/shop" className="inline-block">
-                <button className="bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors duration-200">
+                <button className="bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors duration-200 cursor-pointer">
                   Shop Now
                 </button>
               </Link>
@@ -164,7 +164,7 @@ export default function HomePage() {
               href="/shop?type=top-selling"
               className="mt-8 flex flex-col items-center"
             >
-              <button className="bg-white text-black border border-black px-6 py-2 rounded-full hover:bg-gray-100 transition text-sm sm:text-base">
+              <button className="bg-white cursor-pointer text-black border border-black px-6 py-2 rounded-full hover:bg-gray-100 transition text-sm sm:text-base">
                 View All
               </button>
             </Link>
@@ -184,7 +184,7 @@ export default function HomePage() {
           </div>
           <div className="mt-8 flex flex-col items-center">
             <Link href="/shop" className="mt-8 flex flex-col items-center">
-              <button className="bg-white text-black border border-black px-6 py-2 rounded-full hover:bg-gray-100 transition text-sm sm:text-base">
+              <button className="bg-white text-black border cursor-pointer border-black px-6 py-2 rounded-full hover:bg-gray-100 transition text-sm sm:text-base">
                 View All
               </button>
             </Link>

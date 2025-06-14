@@ -2,6 +2,7 @@ import { Mail, Facebook, Twitter, Instagram } from "lucide-react";
 import Image from "next/image";
 
 export default function Footer() {
+  
   return (
     <footer className="bg-[#f0f0f0] text-black">
       

@@ -47,10 +47,6 @@ export default function InvoicePage() {
         </div>
 
         <div className="mt-6 flex gap-4">
-          <BlackOvalButton variant="contained">
-            Thanks For Shopping With Us
-          </BlackOvalButton>
-
           <BlackOvalButton
             variant="contained"
             onClick={() => router.push("/home")}
