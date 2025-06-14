@@ -200,6 +200,7 @@ export const products: Product[] = [
      images: [
       "/images/products/cg2.jpg",
             "/images/products/cg3.jpg",
+            "/images/products/cg3.jpg",
 
 
     ],
